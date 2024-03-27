@@ -2,9 +2,14 @@ import Container from "../shared/Container";
 import Link from "next/link";
 import ProductCard from "../cards/ProductCard";
 import { TDress } from "@/types/dress.types";
+import TrendingProductCard from "../cards/TrendingProductCard";
 
 const PopularProducts = async () => {
-  const res = await fetch(`${process.env.BACKEND_URL}/all-products`);
+  const res = await fetch(`${process.env.BACKEND_URL}/top-reviews`, {
+    next: {
+      revalidate: 30,
+    },
+  });
   const products = await res.json();
   return (
     <Container>
@@ -25,7 +30,10 @@ const PopularProducts = async () => {
         </div>
         <div className="mt-10 mx-auto max-sm:w-72 md:max-xl:max-w-4xl  grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-10">
           {products?.slice(0, 6).map((product: TDress) => (
-            <ProductCard key={product._id} product={product}></ProductCard>
+            <TrendingProductCard
+              key={product._id}
+              product={product}
+            ></TrendingProductCard>
           ))}
         </div>
       </div>

@@ -1,12 +1,12 @@
+import { TDress } from "@/types/dress.types";
 import Image from "next/image";
-
+import Link from "next/link";
+import React from "react";
+import { FaStar } from "react-icons/fa6";
 import { GoPlusCircle } from "react-icons/go";
 
-import Link from "next/link";
-import { TDress } from "@/types/dress.types";
-
-const TendingProductCard = ({ product }: { product: TDress }) => {
-  const { _id, title, image, price, discount } = product;
+const TrendingProductCard = ({ product }: { product: TDress }) => {
+  const { _id, title, image, price, discount, ratings } = product;
 
   const updatedPrice = (price - (discount * price) / 100).toFixed(2);
   return (
@@ -14,6 +14,21 @@ const TendingProductCard = ({ product }: { product: TDress }) => {
       <p className="px-3 py-1 absolute bg-secondary text-primary rounded-xl text-sm top-3 left-3 z-10">
         -{discount}%
       </p>
+
+      <div className="absolute bottom-16 left-3 z-20">
+        <div className="relative ">
+          <Image
+            className="w-12 h-16"
+            src={"https://i.ibb.co/7ySY6W7/hot-deal.png"}
+            width={100}
+            height={148}
+            alt="hot deals icon"
+          ></Image>
+          <div className="flex items-start absolute z-10 bottom-[10px] left-[13px] text-secondary text-sm">
+            <p>{ratings}</p>
+          </div>
+        </div>
+      </div>
       <div className="h-[360px] relative overflow-hidden">
         <Image
           className="w-auto h-auto  rounded-lg"
@@ -44,4 +59,4 @@ const TendingProductCard = ({ product }: { product: TDress }) => {
   );
 };
 
-export default TendingProductCard;
+export default TrendingProductCard;
