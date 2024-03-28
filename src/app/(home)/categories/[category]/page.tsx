@@ -20,13 +20,15 @@ const CategoryPage = async ({ params }: TCategoryPageProps) => {
   return (
     <div className="min-h-screen pt-32">
       <Container>
-        <div className={`h-96 w-full overflow-hidden relative `}>
+        <div className={`h-52 md:h-96 w-full overflow-hidden relative `}>
           <div className="bg-black absolute w-full mx-auto h-full z-10 bg-opacity-30"></div>
           <div className="absolute w-full h-full z-10 flex items-center justify-center">
-            <h1 className=" text-5xl font-semibold text-secondary ">{name}</h1>
+            <h1 className=" text-2xl md:text-5xl font-semibold text-secondary ">
+              {name}
+            </h1>
           </div>
           <Image
-            className="relative -top-3/4 w-full mx-auto"
+            className="relative  w-full mx-auto"
             src={image}
             width={1240}
             height={384}

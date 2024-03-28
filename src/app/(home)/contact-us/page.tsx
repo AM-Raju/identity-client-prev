@@ -4,6 +4,7 @@ import React from "react";
 
 const ContactUsPage = () => {
   const page = "Contact Us";
+
   return (
     <div className="bg-secondary w-full h-[calc(100vh-520px)] pt-32">
       <Container>
