@@ -2,7 +2,6 @@ import { TDress } from "@/types/dress.types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaStar } from "react-icons/fa6";
 import { GoPlusCircle } from "react-icons/go";
 
 const TrendingProductCard = ({ product }: { product: TDress }) => {

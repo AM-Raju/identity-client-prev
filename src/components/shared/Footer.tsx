@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className="bg-slate-700">
       <Container>
-        <div className="pt-20 pb-5 text-white  flex flex-col  md:flex-row px-3 xl:px-0">
+        <div className="pt-20 pb-5 text-white  flex flex-col  md:flex-row px-3 xl:px-0 justify-between">
           {/* Part 1 */}
           <div className="w-full md:w-3/12 flex flex-col items-center md:items-start">
             <Logo customClass="text white font-normal tracking-wider "></Logo>
@@ -59,7 +59,7 @@ const Footer = () => {
             <div>
               <form action="">
                 <input
-                  className="text-black px-3 md:max-xl:w-36 py-2 outline-none"
+                  className="text-black px-3 w-48  md:max-xl:w-36 py-2 outline-none"
                   type="email"
                   name="subscribe"
                   id=""
@@ -93,11 +93,11 @@ const Footer = () => {
         <div className="px-3 xl:px-0 text-center text-white py-5 flex flex-col md:flex-row justify-between">
           <p>&copy;Identity, All right reserved</p>
           <div className="space-x-3 mt-5 md:mt-0">
-            <Link href="#">Trending Products</Link>
-            <Link href="#">Category</Link>
-            <Link href="#">About Us</Link>
-            <Link href="#">Contact Us</Link>
-            <Link href="#">Customer Care</Link>
+            <Link href="/trending-products">Trending Products</Link>
+            <Link href="/categories">Category</Link>
+            <Link href="/about-us">About Us</Link>
+            <Link href="/contact-us">Contact Us</Link>
+            <Link href="/customer-care">Customer Care</Link>
           </div>
         </div>
       </Container>
